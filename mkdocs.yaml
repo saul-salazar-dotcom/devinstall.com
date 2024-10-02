@@ -9,7 +9,7 @@ nav:
 
 theme:
   name: simple-blog
-  favicon: assets/favicon.ico
+  favicon: assets/favicon.png
   # logo: assets/logo.png
   theme_style: white
   site_name_style: normal
