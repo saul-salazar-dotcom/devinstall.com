@@ -2,7 +2,7 @@ site_name: DevInstall.com
 repo_name: saul-salazar-dotcom/devinstall.com
 repo_url: https://github.com/saul-salazar-dotcom/devinstall.com
 site_url: https://www.devinstall.com/
-copyright: 
+copyright: Powered by Open Source Software. Logo and Favicon by <a href="https://icons8.com">icons8</a>
 
 nav:
   - Home: index.md
@@ -10,7 +10,7 @@ nav:
 theme:
   name: simple-blog
   favicon: assets/favicon.png
-  # logo: assets/logo.png
+  logo: assets/favicon.png
   theme_style: white
   site_name_style: normal
   title_style: bold
@@ -24,4 +24,4 @@ theme:
     title: true
     menu: true
     preview: true
-    footer: false
+    footer: true
