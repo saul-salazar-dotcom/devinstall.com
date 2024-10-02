@@ -7,10 +7,10 @@ if ! command -v curl > /dev/null; then
     echo "❗⚠️ Error: curl is not installed. Please install curl to proceed."
     exit 1
 fi
-if ! -e /usr/local/bin/upt; then
+if [ ! -e /usr/local/bin/upt ]; then
     curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
 fi
-if ! -e "$HOME/.local/bin/mise"; then
+if [ ! -e "$HOME/.local/bin/mise" ]; then
     curl -fsSL https://mise.run | sh
 fi
 mise="$HOME/.local/bin/mise"
