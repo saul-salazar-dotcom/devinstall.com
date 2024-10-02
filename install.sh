@@ -3,8 +3,13 @@
 # curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 
 # Install dependencies (upt and mise)
-curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
-curl -fsSL https://mise.run | sh
+if command -v curl > /dev/null; then
+    curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
+    curl -fsSL https://mise.run | sh
+elif command -v wget > /dev/null; then
+    wget -qO- https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
+    wget -qO- https://mise.run | sh
+fi
 mise="$HOME/.local/bin/mise"
 upt="/usr/local/bin/upt"
 
