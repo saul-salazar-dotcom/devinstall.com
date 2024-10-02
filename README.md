@@ -31,6 +31,7 @@ curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/
 The only dependency is `curl` for Linux and MacOS. On Windows you may need to install Git Bash.
 
 ```sh
+brew install curl # MacOS
 apt install curl # Debian and Ubuntu
 yum install curl # Redhat and CentOS
 dnf install curl # Fedora
