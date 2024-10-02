@@ -1,7 +1,8 @@
 Setup a developer machine in a single command (multiple OS). Read the [source code](https://github.com/saul-salazar-dotcom/devinstall.com).
 
 You will get a [Starship](https://starship.rs/) terminal, [Visual Studio Code](https://code.visualstudio.com/) with extensions and [a lot more packages and tools](#defaults) which you can further [customize](#customization)
-![starship example](https://starship.rs/presets/img/pastel-powerline.png)
+
+![starship example](https://raw.githubusercontent.com/starship/starship/master/media/demo.gif)
 
 ## 🔥 Quick Start
 ```sh
@@ -10,7 +11,7 @@ curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/
 
 ## 📝 Customization
 
-You can use environment variables to extend the functionality:
+You can use environment variables to install whatever you want
 
 ```sh
 export PACKAGES="docker"
