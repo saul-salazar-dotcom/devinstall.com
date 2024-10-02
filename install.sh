@@ -26,7 +26,7 @@ fi
 # Install packages
 echo "$packages" | tr ',' '\n' | while read -r package; do
     if ! command -v "$package" > /dev/null; then
-        sudo $upt install "$package" -y
+        sudo $upt install "$package" -y > /dev/null
     fi
 done
 echo "✅ Install completed: Packages ($packages)"
@@ -38,7 +38,7 @@ fi
 
 # Install tools
 echo "$tools" | tr ',' '\n' | while read -r tool; do
-    $mise use -g "$tool" -y
+    $mise use -g "$tool" -y > /dev/null
 done
 echo "✅ Install completed: Developer Tools ($tools)"
 
@@ -49,7 +49,7 @@ fi
 
 # Install editor (fix for linux systems like Debian and Ubuntu)
 if ! command -v "code" > /dev/null; then
-    UPT_TOOL=snap $upt install code -y
+    sudo UPT_TOOL=snap $upt install code -y
 fi
 
 # Install extensions
