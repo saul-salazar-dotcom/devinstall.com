@@ -1,3 +1,5 @@
+Setup a developer machine in a single command (multiple OS)
+
 ## 🔥 Quick Start
 ```sh
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
