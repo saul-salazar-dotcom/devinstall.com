@@ -4,27 +4,16 @@ This repository aims to resolve how to setup a developer machine across multiple
 
 ## 🔥 Quick Start
 ```sh
-# option 1: curl
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 ```
 
-```sh
-# option 2: wget
-wget -qO- https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
-```
-
-```sh
-# Fix: commant not found
-sudo apt install curl -y
-sudo apt install wget -y
-```
-
 ## 🚀 Features
-- KISS: a single scritp file of 50 lines of code
-- EASY: copy and paste our one line command to install
+- EASY: copy & paste one line
+- KISS: script file of 100 lines of code
 - Cross Platform Compatibility powered by [UPT](https://github.com/sigoden/upt)
 - Tools Versions Management powered by [mise](https://github.com/jdx/mise)
 - Text editor powered by [Visual Studio Code](https://code.visualstudio.com/)
+- Works great with multiple Linux OS and MacOS. Windows is limited.
 
 ## 📝 Customization
 
@@ -35,6 +24,21 @@ export PACKAGES="docker"
 export TOOLS="node,go"
 export EXTENSIONS="vscodevim.vim,ms-kubernetes-tools.vscode-kubernetes-tools"
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+```
+
+## Requirements
+
+The only dependency is `curl` for Linux and MacOS. On Windows you may need to install Git Bash.
+
+```sh
+apt install curl # Debian and Ubuntu
+yum install curl # Redhat and CentOS
+dnf install curl # Fedora
+nix-env -i curl # NixOS
+pacman -S curl # Arch Linux
+zypper install curl # SUSE and OpenSUSE
+emerge net-misc/curl # Gentoo
+xbps-install curl # Void Linux
 ```
 
 ## 🧰 Defaults
