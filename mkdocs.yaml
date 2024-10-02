@@ -10,8 +10,8 @@ nav:
 theme:
   name: simple-blog
   favicon: assets/favicon.ico
-  logo: assets/logo.png
-  theme_style: dark
+  # logo: assets/logo.png
+  theme_style: white
   site_name_style: normal
   title_style: bold
   colors:
