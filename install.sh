@@ -69,27 +69,20 @@ case "$current_shell" in
         echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.bashrc
         echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
         echo 'eval "$(starship init bash)"' >> ~/.bashrc
-        eval "$(~/.local/bin/mise activate bash)"
-        eval "$(starship init bash)"
         ;;
     zsh)
         echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.zshrc
         echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
         echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-        eval "$(~/.local/bin/mise activate zsh)"
-        eval "$(starship init zsh)"
         ;;
     fish)
+        fish_add_path ~/.local/share/mise/shims
         echo '~/.local/bin/mise activate fish | source' >> ~/.config/fish/config.fish
         echo 'starship init fish | source' >> ~/.config/fish/config.fish
-        eval "$(~/.local/bin/mise activate fish)"
-        fish_add_path ~/.local/share/mise/shims
-        ~/.local/bin/mise activate fish | source
-        starship init fish | source
         ;;
     *)
         echo "Unknown shell: $current_shell, please open an issue https://github.com/saul-salazar-dotcom/devinstall.com/issues/new"
         ;;
 esac
 
-echo "✨🥳🎉 Congratulations, all done! 🌟°🥂⋆.ೃ🍾࿔*:･"
+echo "✨🥳🎉 Congratulations, all done! Open a new terminal! 🌟°🥂⋆.ೃ🍾࿔*:･"
