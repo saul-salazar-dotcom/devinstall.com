@@ -4,7 +4,19 @@ This repository aims to resolve how to setup a developer machine across multiple
 
 ## 🔥 Quick Start
 ```sh
+# option 1: curl
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+```
+
+```sh
+# option 2: wget
+wget -qO- https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+```
+
+```sh
+# Fix: commant not found
+sudo apt install curl -y
+sudo apt install wget -y
 ```
 
 ## 🚀 Features
