@@ -1,4 +1,4 @@
-Setup a developer machine in a single command (multiple OS)
+Setup a developer machine in a single command (multiple OS). Read the [source code](https://github.com/saul-salazar-dotcom/devinstall.com)
 
 ## 🔥 Quick Start
 ```sh
@@ -18,7 +18,7 @@ curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/
 
 ## 🚀 Features
 - EASY: copy & paste one line
-- KISS: script file of 100 lines of code
+- KISS: script file of 100 lines
 - Cross Platform Compatibility powered by [UPT](https://github.com/sigoden/upt)
 - Tools Versions Management powered by [mise](https://github.com/jdx/mise)
 - Text editor powered by [Visual Studio Code](https://code.visualstudio.com/)
