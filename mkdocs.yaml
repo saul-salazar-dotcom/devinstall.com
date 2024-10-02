@@ -1,0 +1,25 @@
+site_name: DevInstall.com
+site_url: https://www.devinstall.com/
+copyright: 
+
+nav:
+  - Home: index.md
+
+theme:
+  name: simple-blog
+  favicon: assets/favicon.ico
+  logo: assets/logo.png
+  theme_style: dark
+  site_name_style: normal
+  title_style: bold
+  colors:
+    text: black
+    title: black
+    primary: black
+    background: white
+  components:
+    site_name: true
+    title: true
+    menu: true
+    preview: true
+    footer: false
