@@ -6,7 +6,7 @@
 curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
 curl -fsSL https://mise.run | sh
 mise="$HOME/.local/bin/mise"
-upt="$HOME/.local/bin/upt"
+upt="/usr/local/bin/upt"
 
 # List of packages, tools and extensions
 packages="jq,git,make,gcc,vscode,code,pip,zoxide,fzf,zsh,xclip,htop,ntop"
