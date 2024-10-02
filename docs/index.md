@@ -1,4 +1,7 @@
-Setup a developer machine in a single command (multiple OS). Read the [source code](https://github.com/saul-salazar-dotcom/devinstall.com)
+Setup a developer machine in a single command (multiple OS). Read the [source code](https://github.com/saul-salazar-dotcom/devinstall.com).
+
+You will get a [Starship](https://starship.rs/) terminal, [Visual Studio Code](https://code.visualstudio.com/) with extensions and [a lot more packages and tools](#defaults) which you can further [customize](#customization)
+![starship example](https://starship.rs/presets/img/pastel-powerline.png)
 
 ## 🔥 Quick Start
 ```sh
@@ -12,19 +15,19 @@ You can use environment variables to extend the functionality:
 ```sh
 export PACKAGES="docker"
 export TOOLS="node,go"
-export EXTENSIONS="vscodevim.vim,ms-kubernetes-tools.vscode-kubernetes-tools"
+export EXTENSIONS="vscodevim.vim"
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 ```
 
 ## 🚀 Features
 - EASY: copy & paste one line
 - KISS: script file of 100 lines
-- Cross Platform Compatibility powered by [UPT](https://github.com/sigoden/upt)
-- Tools Versions Management powered by [mise](https://github.com/jdx/mise)
-- Text editor powered by [Visual Studio Code](https://code.visualstudio.com/)
+- Cross Platform Wrapper powered by [UPT](https://github.com/sigoden/upt)
+- Tools Versions Manager powered by [mise](https://github.com/jdx/mise)
+- Text Editor powered by [Visual Studio Code](https://code.visualstudio.com/)
 - Works great with multiple Linux OS and MacOS. Windows is limited.
 
-## Requirements
+## 📦 Requirements
 
 The only dependency is `curl` for Linux and MacOS. On Windows you may need to install Git Bash.
 
@@ -40,9 +43,7 @@ emerge net-misc/curl # Gentoo
 xbps-install curl # Void Linux
 ```
 
-## 🧰 Defaults
-
-An specific version is not set, so it will default to the latest version.
+## 🔤 Defaults
 
 - Packages
     - [jq](https://jqlang.github.io/jq/) (`json` CLI processor)
@@ -63,6 +64,16 @@ An specific version is not set, so it will default to the latest version.
     - [ctop](https://ctop.sh/) (`top` for containers)
     - [zellij](https://zellij.dev/) (`tmux` alternative)
 - Extensions
+    - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+    - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+    - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+    - [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
+    - [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
+    - [DotEnv](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+    - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+    - [Workspace Sidebar](https://marketplace.visualstudio.com/items?itemName=sketchbuch.vsc-workspace-sidebar)
+    - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+    - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 
 ## 💡 FAQ
 
