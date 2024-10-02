@@ -31,7 +31,6 @@ echo "$packages" | tr ',' '\n' | while read -r package; do
         sudo $upt install "$package" -y > /dev/null
     fi
 done
-echo "✅ Install completed: Packages ($packages)"
 
 # Check and append TOOLS environment variable
 if [ -n "$TOOLS" ]; then
@@ -42,7 +41,6 @@ fi
 echo "$tools" | tr ',' '\n' | while read -r tool; do
     $mise use -g "$tool" -y > /dev/null
 done
-echo "✅ Install completed: Developer Tools ($tools)"
 
 # Check and append EXTENSIONS environment variable
 if [ -n "$EXTENSIONS" ]; then
@@ -59,7 +57,6 @@ if command -v "code" > /dev/null; then
     echo "$extensions" | tr ',' '\n' | while read -r extension; do
         code --install-extension "$extension" > /dev/null
     done
-    echo "✅ Install completed: Editor Extensions ($extensions)"
 fi
 
 current_shell=$(basename "$SHELL")
@@ -85,4 +82,8 @@ case "$current_shell" in
         ;;
 esac
 
+clear
+echo "✅ Install completed: System Packages"
+echo "✅ Install completed: Developer Tools"
+echo "✅ Install completed: Editor Extensions"
 echo "✨🥳🎉 Congratulations, all done! Open a new terminal! 🌟°🥂⋆.ೃ🍾࿔*:･"
