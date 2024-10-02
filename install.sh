@@ -3,12 +3,14 @@
 # curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 
 # Install dependencies (upt and mise)
-if command -v curl > /dev/null; then
-    curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
-    curl -fsSL https://mise.run | sh
-elif command -v wget > /dev/null; then
-    wget -qO- https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
-    wget -qO- https://mise.run | sh
+if [ ! -e /usr/local/bin/upt ] || [ ! -e "$HOME/.local/bin/mise" ]; then
+	if command -v curl > /dev/null; then
+	    curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
+	    curl -fsSL https://mise.run | sh
+	elif command -v wget > /dev/null; then
+	    wget -qO- https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
+	    wget -qO- https://mise.run | sh
+	fi
 fi
 mise="$HOME/.local/bin/mise"
 upt="/usr/local/bin/upt"
@@ -55,7 +57,7 @@ fi
 # Install extensions
 if command -v "code" > /dev/null; then
     echo "$extensions" | tr ',' '\n' | while read -r extension; do
-        code --install-extension "$extension"
+        code --install-extension "$extension" > /dev/null
     done
     echo "✅ Install completed: Editor Extensions ($extensions)"
 fi
