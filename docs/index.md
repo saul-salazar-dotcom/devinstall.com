@@ -54,18 +54,21 @@ curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/
 
 You can add environment variables to install custom packages/tools/extensions. Just `export` the variable before running the quick start script.
 
+```shell
+export PACKAGES="docker,docker-desktop"
+export TOOLS="nodejs@lts,go"
+export EXTENSIONS="vscodevim.vim"
+curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+```
+
 - `PACKAGES` env var is meant to install system packages (which are available via `apt`, `brew`, `choco`, etc.)
 - `TOOLS` env var is meant to install developer tools (which are available via [asdf plugins](https://github.com/asdf-vm/asdf-plugins?tab=readme-ov-file#plugin-list) or [mise plugins](https://github.com/mise-plugins/registry?tab=readme-ov-file#plugin-list))
 - `EXTENSIONS` env var is meant to install [extensions](https://marketplace.visualstudio.com/vscode) of Visual Studio Code using the extensions ID
 - After running the script you can install anything using `upt install $pkg` or `mise use -g $pkg`.
 
-```shell
-# General Example
-export PACKAGES="docker,docker-desktop"
-export TOOLS="nodejs@lts,go"
-export EXTENSIONS="vscodevim.vim"
-curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+## 🎨 Presets
 
+```shell
 # AWS Cloud
 export TOOLS="awscli,awscli-local,serverless,awsls,awsweeper,aws-nuke,awsebcli,aws-amplify-cli,aws-sam-cli,aws-sso-cli,saml2aws,granted,iamlive"
 
