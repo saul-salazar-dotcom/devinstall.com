@@ -1,3 +1,4 @@
+baseURL: https://devinstall.com
 site_description: Setup a developer machine in a single command (Cross Platform)
 site_name: DevInstall.com
 repo_name: saul-salazar-dotcom/devinstall.com
