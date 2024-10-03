@@ -5,7 +5,7 @@ You will get a [Starship](https://starship.rs/) terminal, [Visual Studio Code](h
 ![starship example](https://raw.githubusercontent.com/starship/starship/master/media/demo.gif)
 
 ## 🔥 Quick Start
-```sh
+```shell
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 ```
 
@@ -59,7 +59,7 @@ You can add environment variables to install custom packages/tools/extensions. J
 - `EXTENSIONS` env var is meant to install [extensions](https://marketplace.visualstudio.com/vscode) of Visual Studio Code using the extensions ID
 - After running the script you can install anything using `upt install $pkg` or `mise use -g $pkg`.
 
-```sh
+```shell
 # General Example
 export PACKAGES="docker,docker-desktop"
 export TOOLS="nodejs@lts,go"
@@ -83,7 +83,7 @@ export TOOLS="ls-lint,dotenv-linter,spectral,ruff,yamlfmt,yamllint,shellcheck,sh
 
 The only dependency is `curl` for Linux and MacOS. On Windows you may need to install Git Bash.
 
-```sh
+```shell
 brew install curl # MacOS
 apt install curl # Debian and Ubuntu
 yum install curl # Redhat and CentOS
