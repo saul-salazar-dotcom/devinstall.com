@@ -1,10 +1,10 @@
-baseURL: https://devinstall.com
 site_description: Setup a developer machine in a single command (Cross Platform)
 site_name: DevInstall.com
 repo_name: saul-salazar-dotcom/devinstall.com
+repo_name_short: github/DevInstall.com
 repo_url: https://github.com/saul-salazar-dotcom/devinstall.com
 site_url: https://www.devinstall.com/
-copyright: Powered by Open Source Software. Logo and Favicon by <a href="https://icons8.com">icons8</a>
+copyright: Powered by Open Source Software. Logo and Favicon by <a href="https://icons8.com">icons8</a>.
 
 nav:
   - Home: index.md
@@ -16,8 +16,8 @@ theme:
   theme_style: white
   site_name_style: normal
   title_style: bold
-  highlightjs: true
-  hljs_languages: ["shell"]
+  highlightjs: false
+  custom_dir: custom_theme
   colors:
     text: black
     title: black
