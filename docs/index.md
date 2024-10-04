@@ -1,4 +1,4 @@
-Setup a developer machine in a single command (multiple OS). Read the [source code](https://github.com/saul-salazar-dotcom/devinstall.com).
+Setup a developer machine in a single command line across multiple OS.
 
 You will get a [Starship](https://starship.rs/) terminal, [Visual Studio Code](https://code.visualstudio.com/) with extensions and [a lot more packages and tools](#defaults) which you can further [customize](#customization)
 
@@ -11,7 +11,7 @@ curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/
 
 ## 🚀 Features
 - EASY: copy & paste one line
-- KISS: script file of 100 lines
+- KISS: script file of less than [100 lines](https://github.com/saul-salazar-dotcom/devinstall.com).
 - Cross Platform Wrapper powered by [UPT](https://github.com/sigoden/upt)
 - Tools Versions Manager powered by [mise](https://github.com/jdx/mise)
 - Text Editor powered by [Visual Studio Code](https://code.visualstudio.com/)
