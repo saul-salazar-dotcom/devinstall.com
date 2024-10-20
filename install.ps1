@@ -67,11 +67,6 @@ if ($env:EXTENSIONS) {
     $extensions += ",$env:EXTENSIONS"
 }
 
-# Install editor (fix for Linux systems like Debian and Ubuntu)
-if (-not (Get-Command code -ErrorAction SilentlyContinue)) {
-    & $upt install code -y
-}
-
 # Install extensions
 if (Get-Command code -ErrorAction SilentlyContinue) {
     $extensions -split ',' | ForEach-Object {
