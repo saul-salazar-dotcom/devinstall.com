@@ -18,7 +18,6 @@ Expand-Archive -Path $zipFilePath -DestinationPath $extractPath
 # Move mise.exe to the bin directory
 if (-not (Test-Path -Path $exeToMove)) {
     Move-Item -Path $exeToMove -Destination $targetFolder
-    Write-Host "Moved mise.exe to $targetFolder"
 }
 
 # Clean up

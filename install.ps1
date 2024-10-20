@@ -4,12 +4,6 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-# Create target folder if it doesn't exist
-$targetFolder = "$env:USERPROFILE\bin"
-if (-not (Test-Path -Path $targetFolder)) {
-    New-Item -ItemType Directory -Path $targetFolder
-}
-
 # Add the folder to the PATH environment variable
 $envPath = [System.Environment]::GetEnvironmentVariable("Path", "User")
 if (-not $envPath.Split(';') -contains $targetFolder) {
@@ -17,10 +11,24 @@ if (-not $envPath.Split(';') -contains $targetFolder) {
     [System.Environment]::SetEnvironmentVariable("Path", $newPath, "User")
 }
 
-# execute installation scripts
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install-upt.ps1'))
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install-mise.ps1'))
+# execute installation scripts conditionally
+if (-not (Get-Command upt -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing choco"
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    Write-Host "Finished installing choco"
+}
+
+if (-not (Get-Command upt -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing upt"
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install-upt.ps1'))
+    Write-Host "Finished installing upt"
+}
+
+if (-not (Get-Command mise -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing mise"
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install-mise.ps1'))
+    Write-Host "Finished installing mise"
+}
 
 $mise = "$env:USERPROFILE\bin\mise.exe"
 $upt = "$env:USERPROFILE\bin\upt.exe"
