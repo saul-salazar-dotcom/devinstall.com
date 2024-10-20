@@ -36,8 +36,8 @@ $mise = "$env:USERPROFILE\bin\mise.exe"
 $upt = "$env:USERPROFILE\bin\upt.exe"
 
 # List of packages, tools, and extensions
-$packages = "jq,git,make,gcc,vscode,pip,zoxide,fzf,zsh,xclip,htop,ntop"
-$tools = "eza,zellij,mani,ctop,yq,starship"
+$packages = "jq,git,make,vscode,zoxide,fzf,bottom,ntop.portable,starship"
+$tools = "python,node@lts"
 $extensions = "eamodio.gitlens,mhutchie.git-graph,esbenp.prettier-vscode,tamasfe.even-better-toml,mechatroner.rainbow-csv,mikestead.dotenv,EditorConfig.EditorConfig,sketchbuch.vsc-workspace-sidebar,wayou.vscode-todo-highlight,oderwat.indent-rainbow"
 
 # Check and append PACKAGES environment variable
