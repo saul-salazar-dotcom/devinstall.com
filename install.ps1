@@ -15,7 +15,9 @@ if (-not $envPath.Split(';') -contains $targetFolder) {
 if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
     Write-Host "Installing choco"
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-    Write-Host "Finished installing choco"
+    # install Visual C++ Redistributable 2015-2022
+    choco install vcredist140 -y
+    Write-Host "Finished installing choco (and requirements)"
 }
 
 if (-not (Get-Command upt -ErrorAction SilentlyContinue)) {
