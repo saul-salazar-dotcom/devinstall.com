@@ -12,7 +12,7 @@ if (-not $envPath.Split(';') -contains $targetFolder) {
 }
 
 # execute installation scripts conditionally
-if (-not (Get-Command upt -ErrorAction SilentlyContinue)) {
+if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
     Write-Host "Installing choco"
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     Write-Host "Finished installing choco"
