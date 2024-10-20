@@ -20,4 +20,3 @@ Move-Item -Path $exeToMove -Destination $targetFolder
 
 # Clean up
 Remove-Item -Path $zipFilePath -Force
-Remove-Item -Path $extractPath -Recurse -Force
