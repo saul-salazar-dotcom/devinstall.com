@@ -16,11 +16,9 @@ Invoke-WebRequest -Uri $url -OutFile $zipFilePath
 Expand-Archive -Path $zipFilePath -DestinationPath $extractPath
 
 # Move mise.exe to the bin directory
-if (Test-Path -Path $exeToMove) {
+if (-not (Test-Path -Path $exeToMove)) {
     Move-Item -Path $exeToMove -Destination $targetFolder
     Write-Host "Moved mise.exe to $targetFolder"
-} else {
-    Write-Host "mise.exe not found at $exeToMove"
 }
 
 # Clean up
