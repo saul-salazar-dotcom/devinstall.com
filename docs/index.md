@@ -19,11 +19,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ## 🚀 Features
 - EASY: copy & paste one line
-- KISS: script file of less than [100 lines](https://github.com/saul-salazar-dotcom/devinstall.com).
+- KISS: script file of less than [100 lines](https://github.com/saul-salazar-dotcom/devinstall.com)
 - Cross Platform Wrapper powered by [UPT](https://github.com/sigoden/upt)
 - Tools Versions Manager powered by [mise](https://github.com/jdx/mise)
 - Text Editor powered by [Visual Studio Code](https://code.visualstudio.com/)
-- Works great with multiple Linux OS, MacOS and Windows.
+- Works great with multiple Linux OS, MacOS and Windows
+- Installs Python3 and NodeJS (LTS) by default
 
 ## 🔤 Defaults
 
@@ -57,6 +58,20 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
     - [Workspace Sidebar](https://marketplace.visualstudio.com/items?itemName=sketchbuch.vsc-workspace-sidebar)
     - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
     - [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+    - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+    - [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+    - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+    - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+    - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+    - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+    - [Jinja](https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja)
+    - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)
+    - [Python Environment Manager](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-environment-manager)
+    - [Pylance]https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+    - [autoDocString](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+    - [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+    - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 
 ## 📝 Customization
 
@@ -89,10 +104,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 export TOOLS="awscli,awscli-local,serverless,awsls,awsweeper,aws-nuke,awsebcli,aws-amplify-cli,aws-sam-cli,aws-sso-cli,saml2aws,granted,iamlive"
 
 # Terraform
-export TOOLS="opentofu,terraform,terragrunt,terraformer,terraform-lsp,tf-summarize,tfstate-lookup,tfmigrate,tflint,tfenv,tfctl,terrascan,k2tf"
+export TOOLS="opentofu,terraform,terragrunt,terraformer,terraform-lsp,tf-summarize,tfstate-lookup,tfmigrate,tflint,tfenv,tfctl,terrascan,k2tf,infracost"
+export EXTENSIONS="HashiCorp.terraform,pjmiravalle.terraform-advanced-syntax-highlighting,tfsec.tfsec,Infracost.infracost"
 
 # Security
 export TOOLS="amass,bitwarden-secrets-manager,nancy,sentry-cli,gitleaks,trivy,vals,wrk,grype,syft,hey"
+export EXTENSIONS="Trunk.io"
 
 # Linters & Testing
 export TOOLS="ls-lint,dotenv-linter,spectral,ruff,yamlfmt,yamllint,shellcheck,shellspec,typos,maestro,goss,hyperfine"

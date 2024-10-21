@@ -20,7 +20,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 - Cross Platform Compatibility powered by [UPT](https://github.com/sigoden/upt)
 - Tools Versions Management powered by [mise](https://github.com/jdx/mise)
 - Text editor powered by [Visual Studio Code](https://code.visualstudio.com/)
-- Works great with multiple Linux OS, MacOS and Windows.
+- Works great with multiple Linux OS, MacOS and Windows
+- Installs Python3 and NodeJS (LTS) by default
 
 ## 📝 Customization
 
