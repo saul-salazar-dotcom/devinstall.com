@@ -73,7 +73,7 @@ $extensions -split ',' | ForEach-Object {
 $filePathRC = "$env:userprofile\.bashrc"
 $contentRC = @'
 eval "$(mise activate bash)"
-eval "$(starship init bash)"'
+eval "$(starship init bash)"
 '@
 if (Test-Path $filePathRC) { # Append the content if the file exists
     Add-Content -Path $filePathRC -Value $contentRC
