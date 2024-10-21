@@ -18,7 +18,7 @@ upt="/usr/local/bin/upt"
 
 # List of packages, tools and extensions
 packages="jq,git,make,gcc,vscode,code,pip,zoxide,fzf,zsh,xclip,htop,ntop"
-tools="eza,zellij,mani,ctop,yq,starship"
+tools="node@lts,eza,zellij,mani,ctop,yq,starship"
 extensions="eamodio.gitlens,mhutchie.git-graph,esbenp.prettier-vscode,tamasfe.even-better-toml,mechatroner.rainbow-csv,mikestead.dotenv,EditorConfig.EditorConfig,sketchbuch.vsc-workspace-sidebar,wayou.vscode-todo-highlight,oderwat.indent-rainbow"
 
 # Check and append PACKAGES environment variable
