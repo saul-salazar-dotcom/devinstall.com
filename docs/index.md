@@ -5,6 +5,8 @@ You will get a [Starship](https://starship.rs/) terminal, [Visual Studio Code](h
 ![starship example](https://raw.githubusercontent.com/starship/starship/master/media/demo.gif)
 
 ## 🔥 Quick Start
+
+Mac and Linux-based distros:
 ```shell
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 ```
@@ -21,7 +23,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 - Cross Platform Wrapper powered by [UPT](https://github.com/sigoden/upt)
 - Tools Versions Manager powered by [mise](https://github.com/jdx/mise)
 - Text Editor powered by [Visual Studio Code](https://code.visualstudio.com/)
-- Works great with multiple Linux OS and MacOS. Windows is limited.
+- Works great with multiple Linux OS, MacOS and Windows.
 
 ## 🔤 Defaults
 
@@ -65,6 +67,14 @@ export PACKAGES="docker,docker-desktop"
 export TOOLS="nodejs@lts,go"
 export EXTENSIONS="vscodevim.vim"
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+```
+
+```powershell
+$env:PACKAGES = "docker-desktop"
+$env:TOOLS = "java,go"
+$env:TOOLS = "vscodevim.vim,ms-kubernetes-tools.vscode-kubernetes-tools"
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install.ps1'))
 ```
 
 - `PACKAGES` env var is meant to install system packages (which are available via `apt`, `brew`, `choco`, etc.)
