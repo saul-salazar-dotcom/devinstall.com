@@ -95,4 +95,4 @@ if (Test-Path $filePath) {
 Write-Host "✅ Install completed: System Packages"
 Write-Host "✅ Install completed: Developer Tools"
 Write-Host "✅ Install completed: Editor Extensions"
-Write-Host "✨🥳🎉 Congratulations, all done! Open a new terminal! 🌟°🥂⋆.ೃ🍾࿔*:･"
+Write-Host "✨🥳🎉 Congratulations, all done! Open a new terminal! 🌟🥂🍾"
