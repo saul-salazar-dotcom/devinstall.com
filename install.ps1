@@ -34,6 +34,7 @@ if (-not (Get-Command mise -ErrorAction SilentlyContinue)) {
 
 $mise = "$env:USERPROFILE\bin\mise.exe"
 $upt = "$env:USERPROFILE\bin\upt.exe"
+$code = "$env:PROGRAMFILES\Microsoft VS Code\bin\code.cmd"
 
 # List of packages, tools, and extensions
 $packages = "jq,git,make,vscode,python,zoxide,fzf,bottom,ntop.portable,starship"
@@ -68,8 +69,6 @@ if ($env:EXTENSIONS) {
 }
 
 # Install extensions
-if (Get-Command code -ErrorAction SilentlyContinue) {
-    $extensions -split ',' | ForEach-Object {
-        code --install-extension $_
-    }
+$extensions -split ',' | ForEach-Object {
+    & $code --install-extension $_
 }
