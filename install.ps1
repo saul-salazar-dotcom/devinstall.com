@@ -41,7 +41,6 @@ $packages = "jq,git,make,vscode,python,zoxide,fzf,bottom,ntop.portable,starship"
 $tools = "node@lts"
 $extensions = "eamodio.gitlens,mhutchie.git-graph,esbenp.prettier-vscode,tamasfe.even-better-toml,mechatroner.rainbow-csv,mikestead.dotenv,EditorConfig.EditorConfig,sketchbuch.vsc-workspace-sidebar,wayou.vscode-todo-highlight,oderwat.indent-rainbow"
 
-# Check and append PACKAGES environment variable
 if ($env:PACKAGES) {
     $packages += ",$env:PACKAGES"
 }
@@ -53,7 +52,6 @@ $packages -split ',' | ForEach-Object {
     }
 }
 
-# Check and append TOOLS environment variable
 if ($env:TOOLS) {
     $tools += ",$env:TOOLS"
 }
@@ -63,7 +61,6 @@ $tools -split ',' | ForEach-Object {
     & $mise use -g $_ -y
 }
 
-# Check and append EXTENSIONS environment variable
 if ($env:EXTENSIONS) {
     $extensions += ",$env:EXTENSIONS"
 }
@@ -72,3 +69,30 @@ if ($env:EXTENSIONS) {
 $extensions -split ',' | ForEach-Object {
     & $code --install-extension $_
 }
+
+$filePathRC = "$env:userprofile\.bashrc"
+$contentRC = @'
+eval "$(mise activate bash)"
+eval "$(starship init bash)"'
+'@
+if (Test-Path $filePathRC) { # Append the content if the file exists
+    Add-Content -Path $filePathRC -Value $contentRC
+} else { # Create the file and write the content if it does not exist
+    Set-Content -Path $filePathRC -Value $contentRC
+}
+
+$filePath = "$env:userprofile\.bash_profile"
+$content = @'
+test -f ~/.profile && . ~/.profile
+test -f ~/.bashrc && . ~/.bashrc
+'@
+if (Test-Path $filePath) {
+    Add-Content -Path $filePath -Value $content
+} else {
+    Set-Content -Path $filePath -Value $content
+}
+
+Write-Host "✅ Install completed: System Packages"
+Write-Host "✅ Install completed: Developer Tools"
+Write-Host "✅ Install completed: Editor Extensions"
+Write-Host "✨🥳🎉 Congratulations, all done! Open a new terminal! 🌟°🥂⋆.ೃ🍾࿔*:･"
