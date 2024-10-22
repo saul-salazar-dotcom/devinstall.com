@@ -78,8 +78,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 You can add environment variables to install custom packages/tools/extensions. Just `export` the variable before running the quick start script.
 
 ```shell
-export PACKAGES="docker,docker-desktop"
-export TOOLS="nodejs@lts,go"
+export TOOLS="nodejs@18,go"
 export EXTENSIONS="vscodevim.vim"
 curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 ```
@@ -87,7 +86,7 @@ curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/
 ```powershell
 $env:PACKAGES = "docker-desktop"
 $env:TOOLS = "java,go"
-$env:TOOLS = "vscodevim.vim,ms-kubernetes-tools.vscode-kubernetes-tools"
+$env:EXTENSIONS = "ms-kubernetes-tools.vscode-kubernetes-tools"
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.ps1'))
 ```
@@ -113,6 +112,9 @@ export EXTENSIONS="Trunk.io"
 
 # Linters & Testing
 export TOOLS="ls-lint,dotenv-linter,spectral,ruff,yamlfmt,yamllint,shellcheck,shellspec,typos,maestro,goss,hyperfine"
+
+# FrontEnd
+Zignd.html-css-class-completion,Syler.sass-indented,octref.vetur
 ```
 
 ## 📦 Requirements
