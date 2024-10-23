@@ -8,10 +8,10 @@ if ! command -v curl > /dev/null; then
     exit 1
 fi
 if [ ! -e /usr/local/bin/upt ]; then
-    curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
+    curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
 fi
 if [ ! -e "$HOME/.local/bin/mise" ]; then
-    curl -fsSL https://mise.run | sh
+    curl -fsSL https://mise.run | sh > /dev/null
 fi
 mise="$HOME/.local/bin/mise"
 upt="/usr/local/bin/upt"
@@ -50,7 +50,7 @@ fi
 
 # Install editor (fix for linux systems like Debian and Ubuntu)
 if ! command -v "code" > /dev/null; then
-    sudo UPT_TOOL=snap $upt install code -y
+    sudo UPT_TOOL=snap $upt install code -y > /dev/null
 fi
 
 # Install extensions
