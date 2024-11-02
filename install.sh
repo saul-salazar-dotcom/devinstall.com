@@ -2,6 +2,9 @@
 # Usage
 # curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 
+# exit on error
+set -o errexit
+
 # Install dependencies (upt and mise)
 if ! command -v curl > /dev/null; then
     echo "❗⚠️ Error: curl is not installed. Please install curl to proceed."
