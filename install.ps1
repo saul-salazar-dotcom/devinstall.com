@@ -6,6 +6,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 # Add the folder to the PATH environment variable
 $envPath = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
+$targetFolder = "$env:USERPROFILE\bin"
 if (-not $envPath.Split(';') -contains $targetFolder) {
     $newPath = "$envPath;$targetFolder"
     [System.Environment]::SetEnvironmentVariable("Path", $newPath, "Machine")
