@@ -28,7 +28,7 @@ if (-not (Get-Command upt -ErrorAction SilentlyContinue)) {
 
 if (-not (Get-Command mise -ErrorAction SilentlyContinue)) {
     Write-Host "Installing mise"
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install-mise.ps1'))
+    winget install jdx.mise
     Write-Host "Finished installing mise"
 }
 
