@@ -4,12 +4,20 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-# Add the folder to the PATH environment variable
+# Add the bin folder to the PATH environment variable
 $envPath = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
 $targetFolder = "$env:USERPROFILE\bin"
 if (-not $envPath.Split(';') -contains $targetFolder) {
-    $newPath = "$envPath;$targetFolder"
+    $newPath = $envPath + ";" $targetFolder
     [System.Environment]::SetEnvironmentVariable("Path", $newPath, "Machine")
+}
+
+# Add the mise shims folder to the PATH environment variable
+$envPath = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
+$targetFolder = "$env:USERPROFILE\AppData\Local\mise\shims"
+if (-not $envPath.Split(';') -contains $targetFolder) {
+    $misePath = $envPath + ";" $targetFolder
+    [System.Environment]::SetEnvironmentVariable("Path", $misePath, "Machine")
 }
 
 # execute installation scripts conditionally
