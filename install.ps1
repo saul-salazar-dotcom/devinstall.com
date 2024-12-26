@@ -44,7 +44,7 @@ $extensions = "eamodio.gitlens,mhutchie.git-graph,esbenp.prettier-vscode,tamasfe
 
 # Native Install of tools
 winget install eza-community.eza
-(Invoke-WebRequest -UseBasicParsing https://github.com/Slackadays/Clipboard/raw/main/install.ps1).Content | powershell
+winget install -e --id Slackadays.Clipboard
 
 if ($env:PACKAGES) {
     $packages += ",$env:PACKAGES"
