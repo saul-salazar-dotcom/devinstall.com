@@ -37,9 +37,13 @@ $upt = "$env:USERPROFILE\bin\upt.exe"
 $code = "$env:PROGRAMFILES\Microsoft VS Code\bin\code.cmd"
 
 # List of packages, tools, and extensions
-$packages = "jq,git,make,vscode,python,zoxide,fzf,bottom,ntop.portable,starship"
+$packages = "jq,git,make,vscode,python,zoxide,fzf,bottom,ntop.portable,starship,yq"
 $tools = "node@lts"
 $extensions = "eamodio.gitlens,mhutchie.git-graph,esbenp.prettier-vscode,tamasfe.even-better-toml,mechatroner.rainbow-csv,mikestead.dotenv,EditorConfig.EditorConfig,sketchbuch.vsc-workspace-sidebar,wayou.vscode-todo-highlight,oderwat.indent-rainbow,ms-vscode-remote.remote-wsl,streetsidesoftware.code-spell-checker,Gruntfuggly.todo-tree,usernamehw.errorlens,MS-vsliveshare.vsliveshare,ritwickdey.LiveServer,wholroyd.jinja,ms-python.python,KevinRose.vsc-python-indent,donjayamanne.python-environment-manager,ms-python.vscode-pylance,njpwerner.autodocstring,VisualStudioExptTeam.vscodeintellicode,christian-kohler.path-intellisense"
+
+# Native Install of tools
+winget install eza-community.eza
+(Invoke-WebRequest -UseBasicParsing https://github.com/Slackadays/Clipboard/raw/main/install.ps1).Content | powershell
 
 if ($env:PACKAGES) {
     $packages += ",$env:PACKAGES"
