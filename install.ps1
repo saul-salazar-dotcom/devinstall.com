@@ -31,7 +31,7 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 
 if (-not (Get-Command upt -ErrorAction SilentlyContinue)) {
     Write-Host "Installing upt"
-    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/windows/install-upt.ps1'))
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install-upt.ps1'))
     Write-Host "Finished installing upt"
 }
 
