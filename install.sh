@@ -32,7 +32,7 @@ fi
 # Install packages
 echo "$packages" | tr ',' '\n' | while read -r package; do
     if ! command -v "$package" > /dev/null; then
-        sudo $upt install "$package" -y
+        sudo $upt install "$package" -y || true
     fi
 done
 
