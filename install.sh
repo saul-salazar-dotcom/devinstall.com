@@ -1,17 +1,22 @@
 #!/bin/sh
 # Usage
 # curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+# wget -qO- https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 
 # Install dependencies (upt and mise)
-if ! command -v curl > /dev/null; then
-    echo "❗⚠️ Error: curl is not installed. Please install curl to proceed."
-    exit 1
-fi
 if [ ! -e /usr/local/bin/upt ]; then
-    curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
+    else
+        wget -qO- https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
+    fi
 fi
 if [ ! -e "$HOME/.local/bin/mise" ]; then
-    curl -fsSL https://mise.run | sh > /dev/null
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL https://mise.run | sh > /dev/null
+    else
+        wget -qO- https://mise.run | sh > /dev/null
+    fi
 fi
 mise="$HOME/.local/bin/mise"
 upt="/usr/local/bin/upt"
