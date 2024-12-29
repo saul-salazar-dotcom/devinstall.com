@@ -9,16 +9,16 @@ set -o errexit
 # Install dependencies (upt and mise)
 if [ ! -e /usr/local/bin/upt ]; then
     if command -v curl >/dev/null 2>&1; then
-        curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
+        curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
     else
-        wget -qO- https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
+        wget -qO- https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin
     fi
 fi
 if [ ! -e "$HOME/.local/bin/mise" ]; then
     if command -v curl >/dev/null 2>&1; then
-        curl -fsSL https://mise.run | sh > /dev/null
+        curl -fsSL https://mise.run | sh
     else
-        wget -qO- https://mise.run | sh > /dev/null
+        wget -qO- https://mise.run | sh
     fi
 fi
 mise="$HOME/.local/bin/mise"
