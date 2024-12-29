@@ -6,12 +6,12 @@ This repository aims to resolve how to setup a developer machine across multiple
 
 Mac and Linux-based distros:
 ```sh
-curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+command -v curl >/dev/null 2>&1 && curl -fsSL https://devinstall.com/sh | sh || wget -qO- https://devinstall.com/sh | sh
 ```
 
 On Windows, please open a PowerShell terminal **as an Administrator** and copy & paste the following command:
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://devinstall.com/ps1'))
 ```
 
 ## 🚀 Features
@@ -31,7 +31,7 @@ You can use environment variables to extend the functionality:
 export PACKAGES="docker"
 export TOOLS="java,go"
 export EXTENSIONS="vscodevim.vim,ms-kubernetes-tools.vscode-kubernetes-tools"
-curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
+curl -fsSL https://devinstall.com/sh | sh
 ```
 
 ```powershell
@@ -39,5 +39,5 @@ $env:PACKAGES = "docker-desktop"
 $env:TOOLS = "java,go"
 $env:TOOLS = "vscodevim.vim,ms-kubernetes-tools.vscode-kubernetes-tools"
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://devinstall.com/ps1'))
 ```
