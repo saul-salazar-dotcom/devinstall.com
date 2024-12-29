@@ -3,6 +3,9 @@
 # curl -fsSL https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 # wget -qO- https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install.sh | sh
 
+# exit on error
+set -o errexit
+
 # Install dependencies (upt and mise)
 if [ ! -e /usr/local/bin/upt ]; then
     if command -v curl >/dev/null 2>&1; then
@@ -34,7 +37,7 @@ fi
 # Install packages
 echo "$packages" | tr ',' '\n' | while read -r package; do
     if ! command -v "$package" > /dev/null; then
-        sudo $upt install "$package" -y > /dev/null
+        sudo $upt install "$package" -y
     fi
 done
 
@@ -45,7 +48,7 @@ fi
 
 # Install tools
 echo "$tools" | tr ',' '\n' | while read -r tool; do
-    $mise use -g "$tool" -y > /dev/null
+    $mise use -g "$tool" -y
 done
 
 # Check and append EXTENSIONS environment variable
@@ -55,13 +58,13 @@ fi
 
 # Install editor (fix for linux systems like Debian and Ubuntu)
 if ! command -v "code" > /dev/null; then
-    sudo UPT_TOOL=snap $upt install code -y > /dev/null
+    sudo UPT_TOOL=snap $upt install code -y
 fi
 
 # Install extensions
 if command -v "code" > /dev/null; then
     echo "$extensions" | tr ',' '\n' | while read -r extension; do
-        code --install-extension "$extension" > /dev/null
+        code --install-extension "$extension"
     done
 fi
 
@@ -88,7 +91,6 @@ case "$current_shell" in
         ;;
 esac
 
-clear
 echo "✅ Install completed: System Packages"
 echo "✅ Install completed: Developer Tools"
 echo "✅ Install completed: Editor Extensions"
