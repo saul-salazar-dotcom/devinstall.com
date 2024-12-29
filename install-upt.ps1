@@ -1,4 +1,7 @@
-$url = "https://github.com/sigoden/upt/releases/download/v0.8.0/upt-v0.8.0-x86_64-pc-windows-msvc.zip"
+$apiUrl = "https://api.github.com/repos/sigoden/upt/releases/latest"
+$response = Invoke-RestMethod -Uri $apiUrl -Headers @{ "User-Agent" = "PowerShell" }
+$latestVersion = $response.tag_name
+$url = "https://github.com/sigoden/upt/releases/download/$latestVersion/upt-$latestVersion-x86_64-pc-windows-msvc.zip"
 $zipFilePath = "$env:TEMP\upt.zip"
 $targetFolder = "$env:USERPROFILE\bin"
 
