@@ -6,16 +6,16 @@
 # Function to check if a package is installed
 check_package_installed() {
     packageName=$1
-    command -v $packageName >/dev/null 2>&1
+    command -v $packageName > /dev/null 2>&1
 }
 
 install_package() {
     packageName=$1
     echo "$packageName is not installed. Attempting to install using a package manager..."
     # Linux
-    if command -v apk >/dev/null 2>&1; then
+    if command -v apk > /dev/null 2>&1; then
         sudo apk add $packageName
-    if command -v apt-get >/dev/null 2>&1; then
+    elif command -v apt-get > /dev/null 2>&1; then
         sudo apt-get update && sudo apt-get install -y $packageName
     elif command -v dnf > /dev/null 2>&1; then
         sudo dnf install -y $packageName
@@ -36,7 +36,7 @@ install_package() {
         sudo fink install $packageName
     else
         echo "ERROR: Unsupported package manager. Please install $packageName manually and run the script again."
-        exit(1)
+        exit 1
     fi
 }
 
