@@ -56,28 +56,19 @@ if command -v "code" > /dev/null; then
     done
 fi
 
-current_shell=$(basename "$SHELL")
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-case "$current_shell" in
-    bash)
-        echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.bashrc
-        echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
-        echo 'eval "$(starship init bash)"' >> ~/.bashrc
-        ;;
-    zsh)
-        echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.zshrc
-        echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
-        echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-        ;;
-    fish)
-        fish_add_path ~/.local/share/mise/shims
-        echo '~/.local/bin/mise activate fish | source' >> ~/.config/fish/config.fish
-        echo 'starship init fish | source' >> ~/.config/fish/config.fish
-        ;;
-    *)
-        echo "Unknown shell: $current_shell, please open an issue https://github.com/saul-salazar-dotcom/devinstall.com/issues/new"
-        ;;
-esac
+if test -f $HOME/.bashrc;
+then
+    echo 'eval "$(~/.local/bin/mise activate bash --shims)"' >> ~/.bashrc
+    echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+    echo 'eval "$(starship init bash)"' >> ~/.bashrc
+fi
+
+if test -f $HOME/.zshrc;
+then
+    echo 'eval "$(~/.local/bin/mise activate zsh --shims)"' >> ~/.zshrc
+    echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+    echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+fi
 
 echo "✅ Install completed: System Packages"
 echo "✅ Install completed: Developer Tools"
