@@ -7,9 +7,7 @@
 set -o errexit
 
 # Install dependencies
-if ! command -v curl > /dev/null; then
-    wget -qO- https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install-dependencies.sh | sh
-fi
+wget -qO- https://raw.githubusercontent.com/saul-salazar-dotcom/devinstall.com/master/install-dependencies.sh | sh
 if ! command -v upt > /dev/null; then
     curl -fsSL https://raw.githubusercontent.com/sigoden/upt/main/install.sh | sudo sh -s -- --to /usr/local/bin > /dev/null
 fi
@@ -49,11 +47,6 @@ done
 # Check and append EXTENSIONS environment variable
 if [ -n "$EXTENSIONS" ]; then
     extensions="$extensions,$EXTENSIONS"
-fi
-
-# Install editor (fix for linux systems like Debian and Ubuntu)
-if ! command -v "code" > /dev/null; then
-    sudo UPT_TOOL=snap $upt install code -y
 fi
 
 # Install extensions
