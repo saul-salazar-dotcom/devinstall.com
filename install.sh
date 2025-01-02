@@ -60,6 +60,9 @@ if test -f $HOME/.bashrc;
 then
     echo 'eval "$(~/.local/bin/mise activate bash --shims)"' >> ~/.bashrc
     echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+    echo 'eval "$(mani completion bash)"' >> ~/.bashrc
+    echo 'eval "$(fzf --bash)"' >> ~/.bashrc
+    echo 'eval "$(zoxide init bash)"' >> ~/.bashrc
     echo 'eval "$(starship init bash)"' >> ~/.bashrc
 fi
 
@@ -67,6 +70,9 @@ if test -f $HOME/.zshrc;
 then
     echo 'eval "$(~/.local/bin/mise activate zsh --shims)"' >> ~/.zshrc
     echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
+    echo 'eval "$(mani completion zsh)"' >> ~/.zshrc
+    echo 'source <(fzf --zsh)"' >> ~/.zshrc
+    echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
     echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 fi
 
