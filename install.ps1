@@ -4,20 +4,22 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     exit
 }
 
-# Add the bin folder to the PATH environment variable
-$envPath = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
+# Add the bin folder to the PATH var
 $targetFolder = "$env:USERPROFILE\bin"
-if (-not $envPath.Split(';') -contains $targetFolder) {
-    $newPath = $envPath + ";" + $targetFolder
-    [System.Environment]::SetEnvironmentVariable("Path", $newPath, "Machine")
+$currentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
+if (-not ($currentPath -split ";" | Where-Object { $_ -eq $targetFolder })) {
+    [Environment]::SetEnvironmentVariable("PATH", "$currentPath;$targetFolder", "Machine")
 }
 
-# Add the mise shims folder to the PATH environment variable
-$envPath = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
-$targetFolder = "$env:USERPROFILE\AppData\Local\mise\shims"
-if (-not $envPath.Split(';') -contains $targetFolder) {
-    $misePath = $envPath + ";" + $targetFolder
-    [System.Environment]::SetEnvironmentVariable("Path", $misePath, "Machine")
+# Add the mise shims folder to the PATH env variable
+$shimPath = "$env:USERPROFILE\AppData\Local\mise\shims"
+$currentPath = [Environment]::GetEnvironmentVariable("PATH", "Machine")
+
+if (-not ($currentPath -split ";" | Where-Object { $_ -eq $shimPath })) {
+    [Environment]::SetEnvironmentVariable("PATH", "$currentPath;$shimPath", "Machine")
+    Write-Host "mise path added to machine PATH."
+} else {
+    Write-Host "Path already exists in machine PATH."
 }
 
 # execute installation scripts conditionally
