@@ -41,7 +41,7 @@ if (-not (Get-Command mise -ErrorAction SilentlyContinue)) {
     Write-Host "Finished installing mise"
 }
 
-$mise = (Get-Command mise).Source
+$mise = "$env:USERPROFILE\AppData\Local\Microsoft\WinGet\Links\mise.exe"
 $upt = "$env:USERPROFILE\bin\upt.exe"
 $code = "$env:PROGRAMFILES\Microsoft VS Code\bin\code.cmd"
 
