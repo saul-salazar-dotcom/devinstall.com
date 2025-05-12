@@ -41,7 +41,7 @@ if (-not (Get-Command mise -ErrorAction SilentlyContinue)) {
     Write-Host "Finished installing mise"
 }
 
-$mise = "$env:USERPROFILE\bin\mise.exe"
+$mise = (Get-Command mise).Source
 $upt = "$env:USERPROFILE\bin\upt.exe"
 $code = "$env:PROGRAMFILES\Microsoft VS Code\bin\code.cmd"
 
@@ -71,7 +71,7 @@ if ($env:TOOLS) {
 
 # Install tools
 $tools -split ',' | ForEach-Object {
-    & $mise use -g $_ -y
+    & "$mise" use -g $_ -y
 }
 
 if ($env:EXTENSIONS) {
