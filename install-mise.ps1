@@ -1,4 +1,4 @@
-$url = "https://github.com/jdx/mise/releases/download/v2024.10.7/mise-v2024.10.7-windows-x64.zip"
+$url = "https://github.com/jdx/mise/releases/download/v2025.5.8/mise-v2025.5.8-windows-x64.zip"
 $zipFilePath = "$env:TEMP\mise.zip"
 $extractPath = "$env:TEMP"
 $targetFolder = "$env:USERPROFILE\bin"
